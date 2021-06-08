@@ -1,1 +1,156 @@
-<h1>HTTP RABOTAET RZHAKA</h1>
+<html>
+
+<head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="font/flaticon.css">
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 15px;
+        }
+        .card{
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.199);
+            border-radius: 10PX;
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+        }
+        .card-col{
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.199);
+            border-radius: 10PX;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .title{
+            font-size: 14pt;
+            font-weight: bold;
+            text-decoration: underline 3px #4ebff9;
+        }
+        .subtitle{
+            font-size: 12pt;
+            color: rgb(122, 122, 122);
+            font-family: monospace;
+        }
+        .avatar{
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+        .summary{
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+        }
+        .summary * {
+            margin-bottom: 5px;
+        }
+        .icons{
+            display: flex;
+            flex-direction: row;
+            margin-top: 5px;
+        }
+        .icons *{
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .skillsrow{
+            display: block;
+            flex-direction: row;
+            margin-top: 15px;
+            line-height: 32px;
+        }
+        .skillsrow *{
+            background: rgb(223, 223, 223);
+            color: rgb(0, 0, 0);
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: normal;
+        }
+        .btn-row{
+            display: flex;
+            flex-direction: row;
+            padding: 10px 0 0px 0;
+        }
+        .btn-row a{
+            text-align: center;
+            width: 100%;
+            background: rgb(91, 173, 240);
+            padding: 10px;
+            font-size: 12pt;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            text-decoration: none;
+        }
+        ul{
+            padding: 0;
+            margin: 15px;
+            list-style-type: circle;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="header" style="font-style: italic;">Это – "хайтек"<br/>визитка</h1>
+    <div class="card">
+        <img class="avatar" src="pic.jpg"/>
+        <div class="summary">
+            <span class="title">Сергеев Роман</span>
+            <span class="subtitle">Двадцатилетний разработчик</span>
+            <div class="icons">
+                <a href="https://t.me/uheplm" target="_blank"><img src="png/004-telegram.png"/></a>
+                <a href="https://github.com/uheplm" target="_blank"><img src="png/003-github.png"/></a>
+                <a href="https://vk.com/wheelchair_user" target="_blank"><img src="png/002-vk.png"/></a>
+                <a href="mailto: grzd.me@gmail.com" target="_blank"><img src="png/001-email.png"/></a>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="card-col">
+        <span class="title">Написать мне тут</span>
+        <div class="btn-row">
+            <a href="https://t.me/uheplm" style="margin-right: 5px;">Телеграм</a>
+            <a href="https://vk.com/wheelchair_user">ВКонтакте</a>
+        </div>
+    </div>
+    <br/>
+    <div class="card-col">
+        <span class="title">Кто я такой</span>
+        <p>Двадцатилетний груздь, любитель пива. Для связи желательно Телеграм. Могу создать вам такую же визитку за банку пива. Слушаю БАУ, не принимаю осуждений</p>
+    </div>
+    <br/>
+    <div class="card-col">
+        <span class="title">Навыки</span>
+        <div class="skillsrow">
+            <span>JavaScript</span>
+            <span>Python 3</span>
+            <span>HTML5</span>
+            <span>React</span>
+            <span>Git</span>
+            <span>Linux</span>
+            <span>AD DS</span>
+            <span>Windows</span>
+            <span>NodeJS</span>
+            <span>Android</span>
+        </div>
+    </div>
+    <br/>
+    <!-- <div class="card-col">
+        <span class="title">Config</span>
+        <ul>
+            <li>Asus Vivobook Pro 17 (Max)</li>
+            <li>Google Pixel 3</li>
+            <li>Google Pixel 3</li>
+        </ul>
+    </div>
+    <br/> -->
+</body>
+
+</html>
