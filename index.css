@@ -37,13 +37,37 @@ body{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.349);
     border-radius: 15px;
 }
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: #575757;
+    width: inherit;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.349);
+    border-radius: 15px;
+}
+.button{
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #8785c7;
+    padding: 7px 10px 7px 10px;
+    font-weight: 700;
+    color:rgb(224, 224, 224);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+}
 .card-info{
     display: flex;
     flex-direction: row;
     background-color: #575757;
     color: rgb(224, 224, 224);
     width: inherit;
-    margin: 15px;
+    margin: 10px;
     padding: 15px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.349);
     border-radius: 15px;
@@ -154,9 +178,8 @@ body{
     height: max-content;
 }
 .ci-links a {
-    margin-right: 10px;
     background-color: #ffffff;
-    padding: 5px;
+    padding: 3px;
     border-radius: 100%;
 }
 .ci-links a img{
