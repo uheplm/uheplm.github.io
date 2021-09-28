@@ -97,7 +97,7 @@ body{
 }
 .card__content{
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 1rem;
     color:rgb(224, 224, 224);
 }
@@ -123,6 +123,7 @@ body{
     font-size: 1rem;
     margin-right: 10px;
     text-decoration: none;
+    align-items: center;
 }
 .card__links > span{
     background-color: #f5c3c3;
@@ -213,4 +214,12 @@ body{
     font-size: 2rem;
     color:rgb(224, 224, 224);
     font-weight: 700;
+}
+.projects__header{
+    margin: 15px;
+    color: rgb(224, 224, 224);
+    font-size: 2rem;
+    font-weight: 700;
+    width: inherit;
+    text-align: center;
 }
