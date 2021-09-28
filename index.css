@@ -97,7 +97,7 @@ body{
 }
 .card__content{
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 1rem;
     color:rgb(224, 224, 224);
 }
@@ -185,4 +185,32 @@ body{
 .ci-links a img{
     width: 3rem;
     height: 3rem;
+}
+.card-github{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+    background-color: #575757;
+    width: inherit;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.349);
+    border-radius: 15px;
+}
+.card-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.github-param{
+    color:rgb(224, 224, 224);
+    font-weight: 700;
+}
+
+.github-number{
+    font-size: 2rem;
+    color:rgb(224, 224, 224);
+    font-weight: 700;
 }
