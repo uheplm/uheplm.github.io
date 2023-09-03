@@ -18,20 +18,16 @@ function showFallback(){
     fallback.style.zIndex = '5';
     fallback.style.opacity = '1'
 
-    tg.MainButton.setText("Круто, спасибо"); //изменяем текст кнопки иначе
+    tg.MainButton.isVisible = false;
     tg.MainButton.color = "#143F6B";
 
-    setTimeout(tg.close, 4500)
+    setTimeout(() => {tg.sendData(JSON.stringify(collectData()));tg.close()}, 3500)
+    
 }
 
 const valueOf = (id) => document.querySelector(id) ? document.querySelector(id).value : undefined
 const isChecked = (id) => document.querySelector(id) ? document.querySelector(id).checked : undefined
 
-hash_class = [
-    "#смартфон", "#планшет", "#пк_ноутбуки", "#аксессуары",
-    "#комплектующие", "#запчасти", "#периферия", "#аудио",
-    "#вейпинг", "#расходники", "#прочее"
-]
 
 function collectData(){
     return {
@@ -39,11 +35,12 @@ function collectData(){
         name: valueOf('#name'),
         type: document.querySelector('#typeBuy').checked ? 'buy' : document.querySelector('#typeService').checked ? 'service' : 'sell',
         description: valueOf('#description'),
+        category: valueOf('#category'),
         price: {
             isContractPrice: isChecked('#contractPrice '),
             exchange: isChecked('#exchange'),
-            price: valueOf('#price') | '',
-            currency: valueOf('#currency') | ''
+            price: valueOf('#price'),
+            currency: valueOf('#currency')
         },
         location: {
             country: valueOf('#country'),
@@ -219,7 +216,6 @@ function collectData(){
         }else{
             tg.HapticFeedback.notificationOccurred('success')
             showFallback()
-            tg.sendData(JSON.stringify(collectData))
         }
         form.classList.add('was-validated')
     })

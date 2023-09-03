@@ -1,71 +1,71 @@
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-MediumItalic.eot');
+    src: url('/static/resell/css/GoogleSans-MediumItalic.eot');
     src: local('Google Sans Medium Italic'), local('GoogleSans-MediumItalic'),
-        url('/css/GoogleSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-MediumItalic.woff2') format('woff2'),
-        url('/css/GoogleSans-MediumItalic.woff') format('woff'),
-        url('/css/GoogleSans-MediumItalic.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-MediumItalic.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-MediumItalic.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-Bold.eot');
+    src: url('/static/resell/css/GoogleSans-Bold.eot');
     src: local('Google Sans Bold'), local('GoogleSans-Bold'),
-        url('/css/GoogleSans-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-Bold.woff2') format('woff2'),
-        url('/css/GoogleSans-Bold.woff') format('woff'),
-        url('/css/GoogleSans-Bold.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-Bold.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-Bold.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-Italic.eot');
+    src: url('/static/resell/css/GoogleSans-Italic.eot');
     src: local('Google Sans Italic'), local('GoogleSans-Italic'),
-        url('/css/GoogleSans-Italic.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-Italic.woff2') format('woff2'),
-        url('/css/GoogleSans-Italic.woff') format('woff'),
-        url('/css/GoogleSans-Italic.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-Italic.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-Italic.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-Medium.eot');
+    src: url('/static/resell/css/GoogleSans-Medium.eot');
     src: local('Google Sans Medium'), local('GoogleSans-Medium'),
-        url('/css/GoogleSans-Medium.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-Medium.woff2') format('woff2'),
-        url('/css/GoogleSans-Medium.woff') format('woff'),
-        url('/css/GoogleSans-Medium.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-Medium.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-Medium.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-Regular.eot');
+    src: url('/static/resell/css/GoogleSans-Regular.eot');
     src: local('Google Sans Regular'), local('GoogleSans-Regular'),
-        url('/css/GoogleSans-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-Regular.woff2') format('woff2'),
-        url('/css/GoogleSans-Regular.woff') format('woff'),
-        url('/css/GoogleSans-Regular.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-Regular.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-Regular.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Google Sans';
-    src: url('/css/GoogleSans-BoldItalic.eot');
+    src: url('/static/resell/css/GoogleSans-BoldItalic.eot');
     src: local('Google Sans Bold Italic'), local('GoogleSans-BoldItalic'),
-        url('/css/GoogleSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('/css/GoogleSans-BoldItalic.woff2') format('woff2'),
-        url('/css/GoogleSans-BoldItalic.woff') format('woff'),
-        url('/css/GoogleSans-BoldItalic.ttf') format('truetype');
+        url('/static/resell/css/GoogleSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/static/resell/css/GoogleSans-BoldItalic.woff2') format('woff2'),
+        url('/static/resell/css/GoogleSans-BoldItalic.woff') format('woff'),
+        url('/static/resell/css/GoogleSans-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
@@ -95,6 +95,7 @@ body{
     color: var(--tg-theme-text-color) !important;
     transition: all .2s ease-in;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .toast{

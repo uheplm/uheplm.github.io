@@ -103,7 +103,7 @@
                             <span class="input-group-text form-icon shadow-sm" id="priceIcon"><i class="bi bi-cash"></i></span>
                             <input required type="number" class="form-control shadow-sm" id="price" placeholder="Цена" maxlength="30" aria-describedby="priceIcon">
                         </div>
-                        <select required class="form-select alone w-50 shadow-sm" id="currency" aria-describedby="basic-addon1">
+                        <select required class="form-select alone w-50 shadow-sm" id="currency">
                             <option value="rub" selected>₽</option>
                             <option value="uah">₴</option>
                             <option value="usd">$</option>
@@ -135,7 +135,7 @@
                             <option value="ar">Армения</option>
                         </select>
                     </div>                   
-                    <input required type="text" class="form-control alone mb-2 shadow-sm" id="city" placeholder="Город" pattern="^[0-9]{1, 10}$" aria-label="Username" maxlength="30" aria-describedby="basic-addon1">
+                    <input required type="text" class="form-control alone mb-2 shadow-sm" id="city" placeholder="Город" aria-label="Username" maxlength="30" aria-describedby="basic-addon1">
                                         
                 </div>
             </div>
@@ -190,15 +190,26 @@
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="siteLinkIcon"><i class="bi bi-link"></i></span>
-                        <input disabled="true" type="text" class="form-control shadow-sm" id="siteLink" placeholder="Ссылка на сайте объявлений" required aria-label="Username" aria-describedby="siteLinkIcon">
+                        <input disabled="true" type="url" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="form-control shadow-sm" id="siteLink" placeholder="Ссылка на сайте объявлений" required aria-label="Username" aria-describedby="siteLinkIcon">
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="contactLinkIcon"><i class="bi bi-chat-left-dots"></i></span>
-                        <input disabled="true" type="text" class="form-control shadow-sm" id="contactLink" placeholder="Ссылка для связи" required aria-label="Username" aria-describedby="contactLinkIcon">
+                        <input disabled="true" type="url" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="form-control shadow-sm" id="contactLink" placeholder="Ссылка для связи" required aria-label="Username" aria-describedby="contactLinkIcon">
                     </div>
                 </div>
             </div>
 
+            <span class="t-dots">• • •</span>
+            <div class="card shadow ">
+                <div class="card-header">
+                    <i class="bi bi-camera" style="margin-right: 5px;"></i>
+                    Добавьте фотографии
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">После сохранения основной информации, отправьте боту до пяти фотографий и нажмите "Готово/Пропустить"</p>
+                </div>
+            </div>
+            
             <span class="t-dots">• • •</span>
             <div class="card shadow ">
                 <div class="card-header">
@@ -234,11 +245,12 @@
                     </div>
                 </div>
             </div>
+
             <span class="t-dots">• • •</span>
 
             <div class="alert alert-info shadow " role="alert">
                 <h6 class="alert-heading">Важно</h6>
-                Ваше объявление будет опубликовано после проверки. Вы получите уведомление когда это произойдет, пожалуйста, не создавайте дубли.
+                Ваше объявление будет опубликовано после проверки. Вы получите уведомление когда это произойдет. Пожалуйста, не создавайте дубли.
             </div>
         </form>
     </div>
@@ -254,11 +266,11 @@
 
     <div class="fallback" id="fallback">
         <img src="img/check-mark-button_2705.png" class="mb-2" style="width: 7rem; height: 7rem;"/>
-        <h1 id="logo">Объявление создано</h1>
-        <h6 class="mb-3 hint sublogo">На самом деле нет, так как это пока что просто веб страница без логики</h6>
+        <h1 id="logo">Данные получены</h1>
+        <h6 class="mb-3 hint sublogo">Отправьте боту фотографии товара и нажмите кнопку "Готово"</h6>
     </div>
     
-    <button onclick="alert(JSON.stringify(collectData()))">)))</button>
+    <!-- <button onclick="alert(JSON.stringify(collectData()))">)))</button> -->
 
     </body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
