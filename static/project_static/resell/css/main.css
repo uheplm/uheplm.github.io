@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-MediumItalic.eot');
+    src: local('Google Sans Medium Italic'), local('GoogleSans-MediumItalic'),
+        url('/css/GoogleSans-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-MediumItalic.woff2') format('woff2'),
+        url('/css/GoogleSans-MediumItalic.woff') format('woff'),
+        url('/css/GoogleSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-Bold.eot');
+    src: local('Google Sans Bold'), local('GoogleSans-Bold'),
+        url('/css/GoogleSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-Bold.woff2') format('woff2'),
+        url('/css/GoogleSans-Bold.woff') format('woff'),
+        url('/css/GoogleSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-Italic.eot');
+    src: local('Google Sans Italic'), local('GoogleSans-Italic'),
+        url('/css/GoogleSans-Italic.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-Italic.woff2') format('woff2'),
+        url('/css/GoogleSans-Italic.woff') format('woff'),
+        url('/css/GoogleSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-Medium.eot');
+    src: local('Google Sans Medium'), local('GoogleSans-Medium'),
+        url('/css/GoogleSans-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-Medium.woff2') format('woff2'),
+        url('/css/GoogleSans-Medium.woff') format('woff'),
+        url('/css/GoogleSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-Regular.eot');
+    src: local('Google Sans Regular'), local('GoogleSans-Regular'),
+        url('/css/GoogleSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-Regular.woff2') format('woff2'),
+        url('/css/GoogleSans-Regular.woff') format('woff'),
+        url('/css/GoogleSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('/css/GoogleSans-BoldItalic.eot');
+    src: local('Google Sans Bold Italic'), local('GoogleSans-BoldItalic'),
+        url('/css/GoogleSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('/css/GoogleSans-BoldItalic.woff2') format('woff2'),
+        url('/css/GoogleSans-BoldItalic.woff') format('woff'),
+        url('/css/GoogleSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+@keyframes kf_shake {
+    0% { -webkit-transform: translate(7px); }
+    20% { -webkit-transform: translate(-7px); }
+    40% { -webkit-transform: translate(3px); }
+    60% { -webkit-transform: translate(-3px); }
+    80% { -webkit-transform: translate(1px); }
+    100% { -webkit-transform: translate(0px); }
+}
+
+
+*{
+    font-family: 'Google Sans' !important;
+}
+
+.shake{
+    animation: kf_shake 0.4s ease-in-out 0s;
+}
+
+body{
+    background-color: var(--tg-theme-bg-color) !important;
+    color: var(--tg-theme-text-color) !important;
+    transition: all .2s ease-in;
+    height: 100%;
+}
+
+.toast{
+    position: fixed;
+    z-index: 5;
+    width: 96%;
+    bottom: 15px;
+    left: 2%;
+    font-size: 14px;
+}
+
+
+#logo{
+    text-align: center;
+    width: 100%;
+    transition: all .2s ease-in;
+}
+
+.logo-fixed{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.418);
+    background-color: var(--tg-theme-bg-color);
+    width: 100%;
+    z-index: 5;
+}
+
+input::placeholderда, textarea::placeholder { 
+    color: var(--tg-theme-hint-color) !important;
+}
+
+.input-group-text{
+    background-color: var(--tg-theme-button-color) !important;
+}
+
+.header{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.card{
+    border-radius: 1.2rem !important;
+    /* margin-bottom: 1.5rem; */
+}
+
+.alert{
+    border-radius: 1.2rem !important;
+}
+
+.input-group > span {
+    border-radius: .8rem 0 0 .8rem !important;
+}
+
+.input-group > input, .input-group > select {
+    border-radius: 0 .8rem .8rem 0 !important;
+}
+
+a{
+    color: var(--tg-theme-button-color);
+}
+
+.fs-7{
+    font-size: 14px;
+}
+
+.fallback{
+    display: block;
+    text-align: center;
+    opacity: 0;
+    position: fixed;
+    padding: calc(var(--tg-viewport-height) /2 - 7rem) 3rem 0 3rem;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--tg-theme-bg-color);
+    transition: opacity .3s ease-out;
+}
+
+textarea{
+    border-radius: .8rem!important;
+}
+
+.alone{
+    border-radius: .8rem!important;
+}
+
+.card-footer{
+    background-color: var(--tg-theme-bg-color) !important;
+    border-radius: 0 0 1.2rem 1.2rem !important;
+}
+
+.card-header{
+    background-color: var(--tg-theme-bg-color) !important;
+    /* color: var(--tg-theme-hint-color) !important; */
+    border-radius: 1.2rem 1.2rem 0 0 !important;
+    z-index: 0;
+}
+
+.form-check-input:checked~.form-check-label::before {
+    border-color: var(--tg-theme-button-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 47, 69, 0.25) !important;
+  }
+
+.t-dots{
+    display: block;
+    width: 100%;
+    height: 1.5rem;
+    color: var(--tg-theme-hint-color) !important;
+    line-height: 1.5rem;
+    text-align: center;
+    content: '•••';
+}
+
+.form-check-input:checked{
+    background-color: var(--tg-theme-button-color) !important;
+}
+
+.container{
+    padding: 0rem 1.2rem 1.2rem 1.2rem !important;
+    border-radius: 1.2rem 1.2rem 0 0 !important;
+    /* background-color: var(--tg-theme-secondary-bg-color) !important; */
+}
+
+.hint{
+    color: var(--tg-theme-hint-color) !important;
+}
+
+.form-icon{
+    color: var(--tg-theme-button-text-color) !important;
+}
+
+.link{
+    color: var(--tg-theme-link-color) !important;
+}
+
+.button{
+    background: var(--tg-theme-button-color) !important;
+    color: var(--tg-theme-button-text-color) !important;
+    border: none;
+    font-size: 18px;
+}
+
+.button:not(:last-child){
+    margin-bottom: 20px
+}
+
+#usercard{
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
