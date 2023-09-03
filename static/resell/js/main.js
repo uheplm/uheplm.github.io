@@ -219,7 +219,7 @@ function collectData(){
         }else{
             tg.HapticFeedback.notificationOccurred('success')
             showFallback()
-            tg.sendData()
+            tg.sendData(JSON.stringify(collectData))
         }
         form.classList.add('was-validated')
     })
