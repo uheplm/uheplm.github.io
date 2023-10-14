@@ -13,7 +13,6 @@
     <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 </head>
-
 <body>
     <div class="container" id="root">
         
@@ -51,11 +50,12 @@
                     </label>
                 </div>
             </div>
+            <h5><img src="img/Writing Hand.svg" class="emoji">Опишите свой товар</h5>
             <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-info-circle-fill" style="margin-right: 5px;"></i>
                     Опишите свой товар
-                </div>
+                </div> -->
                 <div class="card-body">
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="basic-addon1"><i class="bi bi-pen"></i></span>
@@ -72,7 +72,9 @@
                             <option value="com">Комплектующие</option>
                             <option value="par">Запчасти</option>
                             <option value="per">Переферия</option>
-                            <option value="vaa">Видео и аудио</option>
+                            <option value="vid">Видео</option>
+                            <option value="aud">Аудио</option>
+                            <option value="pho">Фототехника</option>
                             <option value="con">Расходники</option>
                             <option value="etc">Прочее</option>
                             <option value="ser" hidden>Услуга</option>
@@ -85,17 +87,18 @@
                 
             </div>
             <span class="t-dots">• • •</span>
+            <h5><img src="img/Money Mouth Face.svg" class="emoji">Укажите цену</h3>
             <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-coin" style="margin-right: 5px;"></i>
                     Укажите цену
-                </div>
+                </div> -->
                 <div class="card-body">
                     <div class="form-check form-switch ">
                         <input class="form-check-input shadow-sm" type="checkbox" role="switch" id="exchange" novalidate>
                         <label class="form-check-label" for="exchange">Обмен</label>
                     </div>
-                    <div class="form-check form-switch mb-3">
+                    <div class="form-check form-switch mb-2">
                         <input class="form-check-input shadow-sm" type="checkbox" role="switch" id="contractPrice" novalidate>
                         <label class="form-check-label" for="contractPrice">Договорная цена</label>
                     </div>
@@ -104,7 +107,7 @@
                             <span class="input-group-text form-icon shadow-sm" id="priceIcon"><i class="bi bi-cash"></i></span>
                             <input required type="number" class="form-control shadow-sm" id="price" placeholder="Цена" maxlength="30" aria-describedby="priceIcon">
                         </div>
-                        <select required class="form-select alone w-50 shadow-sm" id="currency">
+                        <select required class="form-select alone w-50 shadow-sm" id="currency" aria-describedby="basic-addon1">
                             <option value="rub" selected>₽</option>
                             <option value="uah">₴</option>
                             <option value="usd">$</option>
@@ -118,11 +121,12 @@
             </div>
 
             <span class="t-dots">• • •</span>
+            <h5><img src="img/Round Pushpin.svg" class="emoji">Выберите место</h5>
             <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-geo-fill" style="margin-right: 5px;"></i> 
-                    Выберите место
-                </div>
+                    
+                </div> -->
                 <div class="card-body">
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="countryIcon"><i class="bi bi-globe"></i></span>
@@ -136,19 +140,20 @@
                             <option value="ar">Армения</option>
                         </select>
                     </div>                   
-                    <input required type="text" class="form-control alone mb-2 shadow-sm" id="city" placeholder="Город" aria-label="Username" maxlength="30" aria-describedby="basic-addon1">
+                    <input required type="text" class="form-control alone shadow-sm" id="city" placeholder="Город" pattern="^[0-9]{1, 10}$" aria-label="Username" maxlength="30" aria-describedby="basic-addon1">
                                         
                 </div>
             </div>
 
             <span class="t-dots">• • •</span>
+            <h5><img src="img/Delivery Truck.svg" class="emoji">Укажите способ доставки</h5>
             <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-box-seam" style="margin-right: 5px;"></i>
-                    Укажите способ доставки
-                </div>
+                    
+                </div> -->
                 <div class="card-body">
-                    <div class="form-check form-switch mb-3">
+                    <div class="form-check form-switch mb-2">
                         <input class="form-check-input shadow-sm" type="checkbox" role="switch" id="delivery">
                         <label class="form-check-label" for="delivery">Возможна доставка</label>
                     </div>
@@ -175,48 +180,39 @@
             </div>
 
             <span class="t-dots">• • •</span>
+            <h5><img src="img/Telephone.svg" class="emoji">Настройте способы связи</h5>
             <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-person-badge" style="margin-right: 5px;"></i> 
-                    Настройте способы связи
-                </div>
+                    
+                </div> -->
                 <div class="card-body">
                     <div class="form-check form-switch mb-2">
                         <input class="form-check-input shadow-sm" type="checkbox" role="switch" id="useSiteLink">
                         <label class="form-check-label" for="useSiteLink">Добавить ссылку</label>
                     </div>
-                    <div class="form-check form-switch mb-3">
+                    <div class="form-check form-switch mb-2">
                         <input checked="true" class="form-check-input shadow-sm" type="checkbox" role="switch" id="useTelegram" novalidate>
                         <label class="form-check-label" for="useTelegram">Связь через Telegram</label>
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="siteLinkIcon"><i class="bi bi-link"></i></span>
-                        <input disabled="true" type="url" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="form-control shadow-sm" id="siteLink" placeholder="Ссылка на сайте объявлений" required aria-label="Username" aria-describedby="siteLinkIcon">
+                        <input disabled="true" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" type="text" class="form-control shadow-sm" id="siteLink" placeholder="Ссылка на сайте объявлений" required aria-label="Username" aria-describedby="siteLinkIcon">
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text form-icon shadow-sm" id="contactLinkIcon"><i class="bi bi-chat-left-dots"></i></span>
-                        <input disabled="true" type="url" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" class="form-control shadow-sm" id="contactLink" placeholder="Ссылка для связи" required aria-label="Username" aria-describedby="contactLinkIcon">
+                        <input disabled="true" pattern="^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$" type="text" class="form-control shadow-sm" id="contactLink" placeholder="Ссылка для связи" required aria-label="Username" aria-describedby="contactLinkIcon">
                     </div>
                 </div>
             </div>
 
             <span class="t-dots">• • •</span>
+            <h5><img src="img/Woman Police Officer Light Skin Tone.svg" class="emoji">Ознакомьтесь с правилами</h5>
             <div class="card shadow ">
-                <div class="card-header">
-                    <i class="bi bi-camera" style="margin-right: 5px;"></i>
-                    Добавьте фотографии
-                </div>
-                <div class="card-body">
-                    <p class="mb-0">После сохранения основной информации, отправьте боту до пяти фотографий и нажмите "Готово/Пропустить"</p>
-                </div>
-            </div>
-            
-            <span class="t-dots">• • •</span>
-            <div class="card shadow ">
-                <div class="card-header">
+                <!-- <div class="card-header">
                     <i class="bi bi-patch-exclamation-fill" style="margin-right: 5px;"></i>
-                    Ознакомьтесь с правилами
-                </div>
+                    
+                </div> -->
                 <div class="card-body">
                     <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" value="" id="rules1" required>
@@ -246,12 +242,11 @@
                     </div>
                 </div>
             </div>
-
             <span class="t-dots">• • •</span>
 
-            <div class="alert alert-info shadow " role="alert">
+            <div class="alert alert-info shadow" role="alert">
                 <h6 class="alert-heading">Важно</h6>
-                Ваше объявление будет опубликовано после проверки. Вы получите уведомление когда это произойдет. Пожалуйста, не создавайте дубли.
+                Ваше объявление будет опубликовано после проверки. Вы получите уведомление когда это произойдет, пожалуйста, не создавайте дубли.
             </div>
         </form>
     </div>
@@ -274,5 +269,6 @@
     <!-- <button onclick="alert(JSON.stringify(collectData()))">)))</button> -->
 
     </body>
+    
     <script src='js/main.js'></script>
 </html>

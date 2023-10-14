@@ -95,7 +95,7 @@ body{
     color: var(--tg-theme-text-color) !important;
     transition: all .2s ease-in;
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .toast{
@@ -188,13 +188,27 @@ textarea{
     border-radius: .8rem!important;
 }
 
+.emoji{
+    height: 1.3rem;
+    margin-right: .5rem;
+    aspect-ratio: 1n;
+}
+
+.alert{
+    background-image: url('../img/Nerd\ Face.svg');
+    background-repeat: no-repeat;
+    background-position: bottom -10% right -5%;
+}
+
 .card-footer{
     background-color: var(--tg-theme-bg-color) !important;
     border-radius: 0 0 1.2rem 1.2rem !important;
+    padding: .5rem !important;
 }
 
 .card-header{
     background-color: var(--tg-theme-bg-color) !important;
+    padding: .1rem .8rem;
     /* color: var(--tg-theme-hint-color) !important; */
     border-radius: 1.2rem 1.2rem 0 0 !important;
     z-index: 0;
@@ -220,9 +234,13 @@ textarea{
 }
 
 .container{
-    padding: 0rem 1.2rem 1.2rem 1.2rem !important;
+    padding: 0rem 1rem 1rem 1rem !important;
     border-radius: 1.2rem 1.2rem 0 0 !important;
     /* background-color: var(--tg-theme-secondary-bg-color) !important; */
+}
+
+.card-body{
+    padding: .5rem !important;
 }
 
 .hint{
