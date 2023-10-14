@@ -95,7 +95,7 @@ body{
     color: var(--tg-theme-text-color) !important;
     transition: all .2s ease-in;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .toast{
