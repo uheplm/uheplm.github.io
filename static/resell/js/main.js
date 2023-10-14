@@ -170,11 +170,17 @@ function collectData(){
             case 'per':
                 icon.innerHTML = '<i class="bi bi-keyboard"></i>'
                 break;
-            case 'vaa':
+            case 'aud':
                 icon.innerHTML = '<i class="bi bi-earbuds"></i>'
+                break;
+            case 'vid':
+                icon.innerHTML = '<i class="bi bi-camera-reels"></i>'
                 break;
             case 'con':
                 icon.innerHTML = '<i class="bi bi-droplet"></i>'
+                break;
+            case 'pho':
+                icon.innerHTML = '<i class="bi bi-camera2"></i>'
                 break;
             case 'etc':
                 icon.innerHTML = '<i class="bi bi-three-dots"></i>'
