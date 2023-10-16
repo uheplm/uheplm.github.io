@@ -91,61 +91,61 @@ function validateAndProceed(){
 
 
 function showConfirmation(){
-    const confirmation = document.getElementById('confirmation-fallback')
-    const bubble = document.getElementById('bubble')
+    const confirmation = document.getElementById('confirmation-fallback');
+    const bubble = document.getElementById('bubble');
 
-    document.querySelector('body').style.overflowY = 'hidden'
+    document.querySelector('body').style.overflowY = 'hidden';
     
-    let data = collectData()
+    let data = collectData();
     
-    bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name)
-    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type])
-    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_class}', class_map[data.category])
-    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_country}', country_map[data.location.country].hashtag)
+    bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name);
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type]);
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_class}', class_map[data.category]);
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_country}', country_map[data.location.country].hashtag);
     bubble.innerHTML = bubble.innerHTML.replace(
         '{hashtag_optional}', 
         '' + (data.delivery.hasDelivery ? '#доставка' : '') + 
         '' + (data.price.exchange ? ' #обмен' : '')
 
-    )
+    );
 
-    bubble.innerHTML = bubble.innerHTML.replace('{description}', data.description)
-    bubble.innerHTML = bubble.innerHTML.replace('{flag}', country_map[data.location.country].flag)
-    bubble.innerHTML = bubble.innerHTML.replace('{country}', country_map[data.location.country].name)
-    bubble.innerHTML = bubble.innerHTML.replace('{city}', data.location.city)
+    bubble.innerHTML = bubble.innerHTML.replace('{description}', data.description);
+    bubble.innerHTML = bubble.innerHTML.replace('{flag}', country_map[data.location.country].flag);
+    bubble.innerHTML = bubble.innerHTML.replace('{country}', country_map[data.location.country].name);
+    bubble.innerHTML = bubble.innerHTML.replace('{city}', data.location.city);
     bubble.innerHTML = bubble.innerHTML.replace(
         '{price}',
         !data.price.isContractPrice & !data.price.exchange ? data.price.price : (data.price.isContractPrice ? 'Договорная' : 'Обмен')
-    )
+    );
     bubble.innerHTML = bubble.innerHTML.replace(
         '{currency}', 
         !data.price.isContractPrice & !data.price.exchange ? currency_map[data.price.currency] : ''
-    )
+    );
     bubble.innerHTML = bubble.innerHTML.replace(
         '{shipping}', 
         data.delivery.hasDelivery ? (`Доставка ${delivery_map[data.delivery.deliveryRange]} ${delivery_pay_map[data.delivery.deliveryPayment]}`)
         : 'Самовывоз'
-    )
+    );
     bubble.innerHTML = bubble.innerHTML.replace(
         '{ad_link}', 
         data.contacts.useSiteLink ? `<br><a href="${data.contacts.siteLink}">Объявление на сайте</a>` : ''
-    )
+    );
     bubble.innerHTML = bubble.innerHTML.replace(
         '{seller_name}', 
         tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
-    )
-    bubble.innerHTML = bubble.innerHTML.replace('{reports}', 0)
-    bubble.innerHTML = bubble.innerHTML.replace('{rating}', 0)
-    bubble.innerHTML = bubble.innerHTML.replace('{id}', tg.initDataUnsafe.user.id)
-    bubble.innerHTML = bubble.innerHTML.replace('{profile}', 'https://t.me/theresell_bot/?start=p_' + tg.initDataUnsafe.user.id)
+    );
+    bubble.innerHTML = bubble.innerHTML.replace('{reports}', 0);
+    bubble.innerHTML = bubble.innerHTML.replace('{rating}', 0);
+    bubble.innerHTML = bubble.innerHTML.replace('{id}', tg.initDataUnsafe.user.id);
+    bubble.innerHTML = bubble.innerHTML.replace('{profile}', 'https://t.me/theresell_bot/?start=p_' + tg.initDataUnsafe.user.id);
     
 
-    tg.MainButton.offClick(validateAndProceed)
-    tg.MainButton.text = 'Отправить'
-    tg.MainButton.onClick(showFallback)
+    tg.MainButton.offClick(validateAndProceed);
+    tg.MainButton.text = 'Отправить';
+    tg.MainButton.onClick(showFallback);
 
     confirmation.style.zIndex = '5';
-    confirmation.style.opacity = '1'
+    confirmation.style.opacity = '1';
 }
 
 function hideConfirmation(){
