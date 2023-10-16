@@ -24,7 +24,7 @@
             Интерфейс создания объявлений работает в тестовом режиме и может координально поменяться через некоторое время
         </div> -->
         <form id="mainForm" class="needs-validation">
-            <div class="d-flex justify-content-around mb-3">
+            <div class="d-flex justify-content-around">
                 <!-- <span class="input-group-text form-icon" id="basic-addon1"><i class="bi bi-receipt"></i></span>
                 <select class="form-select" aria-describedby="basic-addon1" required>
                     <option selected disabled value="">Выберите тип объявления</option>
@@ -50,6 +50,7 @@
                     </label>
                 </div>
             </div>
+            <span class="t-dots">• • •</span>
             <h5><img src="img/Writing Hand.svg" class="emoji">Опишите свой товар</h5>
             <div class="card shadow ">
                 <!-- <div class="card-header">
@@ -258,6 +259,27 @@
           </div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
+    </div>
+
+    <div class="confirmation-fallback" id="confirmation-fallback">
+        <img src="img/Eyes.png" class="mb-3">
+        <h4 class="mb-2">Так будет выглядеть ваше объявление:</h4>
+        <div class="bubble mb-3" id="bubble">
+            <b>{name}</b>
+            <br><br>
+            {hashtag_type} {hashtag_class} {hashtag_country} {hashtag_optional}
+            <br><br>
+            <i>{description}</i>
+            <br><br>
+            {flag} {country}, {city}<br>
+            <b>💳 {price}{currency}</b><br>
+            <b>📦 {shipping}</b>{ad_link}<br>
+            <br>
+            👤 <a>{seller_name}</a> | ⭐️ {rating} | ⚠️ {reports} | <adisabled>профиль</a> 
+        </div>
+        <button type="button" class="btn" onclick="hideConfirmation()"><i class="bi bi-pencil"></i></button>
+        <br>
+        <br>
     </div>
 
     <div class="fallback" id="fallback">

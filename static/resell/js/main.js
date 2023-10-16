@@ -1,5 +1,57 @@
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
+const type_map = {
+    'buy': "#покупка",
+    'sell': "#продажа",
+    'service': "#услуга",
+}
+
+const class_map = {
+    'sph': '#смартфон',
+    'tab': '#планшет',
+    'pcn': '#пк_ноутбуки',
+    'acc': '#аксессуары',
+    'com': '#комплектующие',
+    'par': '#запчасти',
+    'per': '#переферия',
+    'vid': '#видео',
+    'aud': '#аудио',
+    'pho': '#фототехника',
+    'con': '#расходники',
+    'etc': '#прочее',
+    'ser': '#услуга',
+}
+
+const currency_map = {
+    'rub': '₽',
+    'uah': '₴',
+    'usd': '$',
+    'kzt': '₸',
+    'byn': 'Br',
+    'gel': '₾',
+    'amd': '֏'
+}
+
+const country_map = {
+    'ru': {'flag': "🇷🇺", 'name': 'Россия', 'hashtag': '#россия'},
+    'ua': {'flag': "🇺🇦", 'name': 'Украина', 'hashtag': '#украина'},
+    'kz': {'flag': "🇰🇿", 'name': 'Казахстан', 'hashtag': '#казахстан'},
+    'by': {'flag': "🇧🇾", 'name': 'Беларусь', 'hashtag': '#беларусь'},
+    'ge': {'flag': "🇬🇪", 'name': 'Грузия', 'hashtag': '#грузия'},
+    'ar': {'flag': "🇦🇲", 'name': 'Армения', 'hashtag': '#армения'},
+}
+
+const delivery_map = {
+    "ciw": 'по городу',
+    'cow': 'по стране',
+    'wow': 'по миру'
+}
+
+const delivery_pay_map = {
+    'byClient': 'за ваш счет',
+    'byMe': 'за мой счет',
+}
+
 function shake(){
     const body = document.querySelector('body')
     body.style.animation = 'kf_shake 0.4s ease-in-out 0s';
@@ -15,7 +67,7 @@ function toast(text){
 
 function showFallback(){
     const fallback = document.getElementById('fallback')
-    fallback.style.zIndex = '5';
+    fallback.style.zIndex = '10';
     fallback.style.opacity = '1'
 
     tg.MainButton.isVisible = false;
@@ -23,6 +75,128 @@ function showFallback(){
 
     setTimeout(() => {tg.sendData(JSON.stringify(collectData()));tg.close()}, 3500)
     
+}
+
+function validateAndProceed(){
+    const form = document.querySelector('#mainForm')
+    if(!form.checkValidity()){
+        tg.HapticFeedback.notificationOccurred('error')
+        shake()
+    }else{
+        tg.HapticFeedback.notificationOccurred('success')
+        showConfirmation()
+    }
+    form.classList.add('was-validated')
+}
+
+
+function showConfirmation(){
+    const confirmation = document.getElementById('confirmation-fallback')
+    const bubble = document.getElementById('bubble')
+
+    document.querySelector('body').style.overflowY = 'hidden'
+    
+    let data = collectData()
+    // { 
+    //     action: 'create',
+    //     name: "Моторолла эдж 20",
+    //     type: 'sell',
+    //     description: 'Купите я всех заебал уже',
+    //     category: 'sph',
+    //     price: {
+    //         isContractPrice: true,
+    //         exchange: true,
+    //         price: 1,
+    //         currency: 'rub'
+    //     },
+    //     location: {
+    //         country: 'ru',
+    //         city: 'KALUGA'
+    //     },
+    //     delivery: {
+    //         hasDelivery: false,
+    //         deliveryRange: 'ciw',
+    //         deliveryPayment: 'byMe'
+    //     },
+    //     contacts: {
+    //         useTelegram: true,
+    //         useSiteLink: true,
+    //         contactLink: '',
+    //         siteLink: '',
+    //     }
+    // }
+    
+    bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name)
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type])
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_class}', class_map[data.category])
+    bubble.innerHTML = bubble.innerHTML.replace('{hashtag_country}', country_map[data.location.country].hashtag)
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{hashtag_optional}', 
+        '' + (data.delivery.hasDelivery ? '#доставка' : '') + 
+        '' + (data.price.exchange ? ' #обмен' : '')
+
+    )
+
+    bubble.innerHTML = bubble.innerHTML.replace('{description}', data.description)
+    bubble.innerHTML = bubble.innerHTML.replace('{flag}', country_map[data.location.country].flag)
+    bubble.innerHTML = bubble.innerHTML.replace('{country}', country_map[data.location.country].name)
+    bubble.innerHTML = bubble.innerHTML.replace('{city}', data.location.city)
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{price}',
+        !data.price.isContractPrice & !data.price.exchange ? data.price.price : (data.price.isContractPrice ? 'Договорная' : 'Обмен')
+    )
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{currency}', 
+        !data.price.isContractPrice & !data.price.exchange ? currency_map[data.price.currency] : ''
+    )
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{shipping}', 
+        data.delivery.hasDelivery ? (`Доставка ${delivery_map[data.delivery.deliveryRange]} ${delivery_pay_map[data.delivery.deliveryPayment]}`)
+        : 'Самовывоз'
+    )
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{ad_link}', 
+        data.contacts.useSiteLink ? `<br><a href="${data.contacts.siteLink}">Объявление на сайте</a>` : ''
+    )
+    bubble.innerHTML = bubble.innerHTML.replace(
+        '{seller_name}', 
+        tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
+    )
+    bubble.innerHTML = bubble.innerHTML.replace('{reports}', 0)
+    bubble.innerHTML = bubble.innerHTML.replace('{rating}', 0)
+    bubble.innerHTML = bubble.innerHTML.replace('{id}', tg.initDataUnsafe.user.id)
+    bubble.innerHTML = bubble.innerHTML.replace('{profile}', 'https://t.me/theresell_bot/?start=p_' + tg.initDataUnsafe.user.id)
+    
+
+    tg.MainButton.offClick(validateAndProceed)
+    tg.MainButton.text = 'Отправить'
+    tg.MainButton.onClick(showFallback)
+
+    confirmation.style.zIndex = '5';
+    confirmation.style.opacity = '1'
+}
+
+function hideConfirmation(){
+    const confirmation = document.getElementById('confirmation-fallback')
+    document.querySelector('body').style.overflowY = 'scroll'
+    document.getElementById('bubble').innerHTML = `
+            <b>{name}</b>
+            <br><br>
+            {hashtag_type} {hashtag_class} {hashtag_country} {hashtag_optional}
+            <br><br>
+            <i>{description}</i>
+            <br><br>
+            {flag} {country}, {city}<br>
+            <b>💳 {price}{currency}</b><br>
+            <b>📦 {shipping}</b>{ad_link}<br>
+            <br>
+            👤 <a>{seller_name}</a> | ⭐️ {rating} | ⚠️ {reports} | <a>профиль</a>
+    `
+    confirmation.style.opacity = '0'
+    confirmation.style.zIndex = '-1000';
+    tg.MainButton.offClick(showFallback)
+    tg.MainButton.text = 'Далее'
+    tg.MainButton.onClick(validateAndProceed)
 }
 
 const valueOf = (id) => document.querySelector(id) ? document.querySelector(id).value : undefined
@@ -66,7 +240,7 @@ function collectData(){
     document.querySelectorAll('select').forEach(e => e.addEventListener('change', tg.HapticFeedback.selectionChanged()))
     document.querySelector('body').setAttribute("data-bs-theme", tg.colorScheme)
     tg.MainButton.isVisible = true;
-    tg.MainButton.text = "Сохранить"; //изменяем текст кнопки 
+    tg.MainButton.text = "Далее"; //изменяем текст кнопки
     tg.onEvent('viewportChanged', (e) => {
         if(tg.isExpanded){
             document.querySelector('body').style.marginTop = '1.2rem';
@@ -213,18 +387,8 @@ function collectData(){
         })
     })
     
-    const form = document.querySelector('#mainForm')
     
-    tg.MainButton.onClick(() => {
-        if(!form.checkValidity()){
-            tg.HapticFeedback.notificationOccurred('error')
-            shake()
-        }else{
-            tg.HapticFeedback.notificationOccurred('success')
-            showFallback()
-        }
-        form.classList.add('was-validated')
-    })
+    tg.MainButton.onClick(validateAndProceed)
 
     tg.ready()
 })()

@@ -149,16 +149,26 @@ input::placeholderда, textarea::placeholder {
     border-radius: 1.2rem !important;
 }
 
+h5{
+    width: 100%;
+    text-align: center;
+}
+
 .input-group > span {
     border-radius: .8rem 0 0 .8rem !important;
 }
 
 .input-group > input, .input-group > select {
     border-radius: 0 .8rem .8rem 0 !important;
+    /* background-color: var(--tg-theme-secondary-bg-color) !important; */
 }
 
+/* select, input{
+     background-color: var(--tg-theme-secondary-bg-color) !important; 
+} */
+
 a{
-    color: var(--tg-theme-button-color);
+    color: var(--tg-theme-link-color);
 }
 
 .fs-7{
@@ -180,8 +190,75 @@ a{
     transition: opacity .3s ease-out;
 }
 
+.btn{
+    border-radius: 100% !important;
+    background-color: var(--tg-theme-button-color) !important;
+    color: var(--tg-theme-button-text-color) !important;
+    width: 3rem;
+    height: 3rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.bubble{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --r: 2rem; /* the radius */
+    --t: .7rem;
+    width: 100%;
+    text-align: left;
+    min-height: 100px;
+    background-image: 
+        linear-gradient(0deg, var(--tg-theme-secondary-bg-color), var(--tg-theme-secondary-bg-color) ),
+        linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
+    background-blend-mode: multiply;
+    border: #aaa;
+    margin: auto;
+    box-shadow: 0 1rem 3rem rgba(#000, .175) !important;
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    place-self: start;
+    padding: calc(2*var(--r)/5);
+    -webkit-mask: 
+        radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+        var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+        conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+        calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+        radial-gradient(50% 50%,#000 98%,#0000 101%) 
+        0 0/var(--r) var(--r) space padding-box;
+    mask: 
+        radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+        var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+        conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+        calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+        radial-gradient(50% 50%,#000 98%,#0000 101%) 
+        0 0/var(--r) var(--r) space padding-box;
+}
+
+
+.confirmation-fallback{
+    overflow-y: scroll;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    opacity: 0;
+    position: fixed;
+    padding: 2rem 3rem 0 3rem;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: var(--tg-theme-bg-color) #aaa; */
+    background-color: var(--tg-theme-bg-color);
+    transition: opacity .3s ease-out;
+    place-content: center;
+}
+
 textarea{
     border-radius: .8rem!important;
+    /* background-color: var(--tg-theme-secondary-bg-color) !important; */
+
 }
 
 .alone{
