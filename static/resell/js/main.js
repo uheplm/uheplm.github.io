@@ -93,11 +93,12 @@ function validateAndProceed(){
 function showConfirmation(){
     const confirmation = document.getElementById('confirmation-fallback');
     const bubble = document.getElementById('bubble');
-
-    document.querySelector('body').style.overflowY = 'hidden';
     
     let data = collectData();
     console.log(data)
+
+    document.querySelector('body').style.overflowY = 'hidden';
+    
     
     bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name);
     bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type]);
