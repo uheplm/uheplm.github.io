@@ -138,14 +138,12 @@ function showConfirmation(){
     bubble.innerHTML = bubble.innerHTML.replace('{rating}', 0);
     bubble.innerHTML = bubble.innerHTML.replace('{id}', tg.initDataUnsafe.user.id);
     bubble.innerHTML = bubble.innerHTML.replace('{profile}', 'https://t.me/theresell_bot/?start=p_' + tg.initDataUnsafe.user.id);
-    
+    confirmation.style.zIndex = '5';
+    confirmation.style.opacity = '1';
 
     tg.MainButton.offClick(validateAndProceed);
     tg.MainButton.text = 'Отправить';
     tg.MainButton.onClick(showFallback);
-
-    confirmation.style.zIndex = '5';
-    confirmation.style.opacity = '1';
 }
 
 function hideConfirmation(){
