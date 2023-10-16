@@ -97,34 +97,6 @@ function showConfirmation(){
     document.querySelector('body').style.overflowY = 'hidden'
     
     let data = collectData()
-    // { 
-    //     action: 'create',
-    //     name: "Моторолла эдж 20",
-    //     type: 'sell',
-    //     description: 'Купите я всех заебал уже',
-    //     category: 'sph',
-    //     price: {
-    //         isContractPrice: true,
-    //         exchange: true,
-    //         price: 1,
-    //         currency: 'rub'
-    //     },
-    //     location: {
-    //         country: 'ru',
-    //         city: 'KALUGA'
-    //     },
-    //     delivery: {
-    //         hasDelivery: false,
-    //         deliveryRange: 'ciw',
-    //         deliveryPayment: 'byMe'
-    //     },
-    //     contacts: {
-    //         useTelegram: true,
-    //         useSiteLink: true,
-    //         contactLink: '',
-    //         siteLink: '',
-    //     }
-    // }
     
     bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name)
     bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type])
