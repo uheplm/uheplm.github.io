@@ -97,6 +97,7 @@ function showConfirmation(){
     document.querySelector('body').style.overflowY = 'hidden';
     
     let data = collectData();
+    console.log(data)
     
     bubble.innerHTML = bubble.innerHTML.replace('{name}', data.name);
     bubble.innerHTML = bubble.innerHTML.replace('{hashtag_type}', type_map[data.type]);
