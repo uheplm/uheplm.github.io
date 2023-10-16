@@ -93,7 +93,7 @@ function validateAndProceed(){
 function showConfirmation(){
     const confirmation = document.getElementById('confirmation-fallback');
     const bubble = document.getElementById('bubble');
-    
+
     let data = collectData();
     console.log(data)
 
@@ -134,12 +134,12 @@ function showConfirmation(){
     );
     bubble.innerHTML = bubble.innerHTML.replace(
         '{seller_name}', 
-        tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
+        "Ваше имя"
     );
     bubble.innerHTML = bubble.innerHTML.replace('{reports}', 0);
     bubble.innerHTML = bubble.innerHTML.replace('{rating}', 0);
-    bubble.innerHTML = bubble.innerHTML.replace('{id}', tg.initDataUnsafe.user.id);
-    bubble.innerHTML = bubble.innerHTML.replace('{profile}', 'https://t.me/theresell_bot/?start=p_' + tg.initDataUnsafe.user.id);
+    bubble.innerHTML = bubble.innerHTML.replace('{id}', '');
+    bubble.innerHTML = bubble.innerHTML.replace('{profile}', '');
     confirmation.style.zIndex = '5';
     confirmation.style.opacity = '1';
 
