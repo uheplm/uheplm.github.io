@@ -107,7 +107,7 @@
                     <div class="d-flex gap-3">
                         <div class="input-group flex-grow-2">
                             <span class="input-group-text form-icon shadow-sm" id="priceIcon"><i class="bi bi-cash"></i></span>
-                            <input required type="number" class="form-control shadow-sm" id="price" placeholder="Цена" maxlength="30" aria-describedby="priceIcon">
+                            <input required type="number" class="form-control shadow-sm" id="price" placeholder="Цена" max="10000000" aria-describedby="priceIcon">
                         </div>
                         <select required class="form-select alone w-50 shadow-sm" id="currency" aria-describedby="basic-addon1">
                             <option value="rub" selected>₽</option>
@@ -246,7 +246,7 @@
             </div>
             <span class="t-dots">• • •</span>
 
-            <div class="alert alert-info shadow" role="alert">
+            <div class="alert alert-info shadow" style="padding-right: 1rem;" role="alert">
                 <h6 class="alert-heading">Важно</h6>
                 Ваше объявление будет опубликовано после проверки. Вы получите уведомление когда это произойдет, пожалуйста, не создавайте дубли.
             </div>
