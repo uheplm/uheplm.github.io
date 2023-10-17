@@ -16,9 +16,10 @@
 <body>
     <div class="container" id="root">
         
-        <h1 id="logo">re:sell</h1>
-        <center><h6 class="mb-3 hint sublogo">Создание объявления</h6></center>
-        
+        <h1 id="logo">
+            <img class="emoji shadow" id="logo-img" style="border-radius: 38%;" src="img/emoboy.png" onclick="easterEgg()"><span id="logo-text">re:sell</span>
+        </h1>
+        <h6 class="mb-3 hint sublogo">Создание объявления</h6>
         <!-- <div class="alert alert-warning" role="alert">
             <h6 class="alert-heading">Работаем в тестовом режиме</h6>
             Интерфейс создания объявлений работает в тестовом режиме и может координально поменяться через некоторое время
@@ -72,7 +73,7 @@
                             <option value="acc">Аксессуары</option>
                             <option value="com">Комплектующие</option>
                             <option value="par">Запчасти</option>
-                            <option value="per">Переферия</option>
+                            <option value="per">Периферия</option>
                             <option value="vid">Видео</option>
                             <option value="aud">Аудио</option>
                             <option value="pho">Фототехника</option>
@@ -252,7 +253,7 @@
         </form>
     </div>
 
-    <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
+    <div class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
         <div class="d-flex">
           <div class="toast-body">
             Hello, world! This is a toast message.
@@ -262,9 +263,9 @@
     </div>
 
     <div class="confirmation-fallback" id="confirmation-fallback">
-        <img src="img/Eyes.png" class="mb-3">
-        <h4 class="mb-2">Так будет выглядеть ваше объявление:</h4>
-        <div class="bubble mb-3" id="bubble">
+        <img src="img/Eyes.png" class="mb-1">
+        <h4 class="mb-3">Так будет выглядеть ваше объявление:</h4>
+        <div class="bubble mb-3 shadow" id="bubble">
             <b>{name}</b>
             <br><br>
             {hashtag_type} {hashtag_class} {hashtag_country} {hashtag_optional}
@@ -277,7 +278,7 @@
             <br>
             👤 <a>{seller_name}</a> | ⭐️ {rating} | ⚠️ {reports} | <adisabled>профиль</a> 
         </div>
-        <button type="button" class="btn" onclick="hideConfirmation()"><i class="bi bi-pencil"></i></button>
+        <button type="button" class="btn shadow" onclick="hideConfirmation()"><i class="bi bi-pencil"></i></button>
         <br>
         <br>
     </div>
@@ -292,5 +293,5 @@
 
     </body>
     
-    <script src='js/main.js'></script>
+    <script src='js/main.js?version=1'></script>
 </html>

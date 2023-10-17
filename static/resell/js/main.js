@@ -13,7 +13,7 @@ const class_map = {
     'acc': '#аксессуары',
     'com': '#комплектующие',
     'par': '#запчасти',
-    'per': '#переферия',
+    'per': '#периферия',
     'vid': '#видео',
     'aud': '#аудио',
     'pho': '#фототехника',
@@ -56,6 +56,26 @@ function shake(){
     const body = document.querySelector('body')
     body.style.animation = 'kf_shake 0.4s ease-in-out 0s';
     setTimeout(() => {body.style.animation = ''}, 400)
+}
+
+let easterEggCounter = 0;
+function easterEgg(e){
+    easterEggCounter++
+    if(easterEggCounter >= 5){
+        toast('<img class="emoji shadow" style="border-radius: 38%;" src="img/redebalo.jpg"> Как от пасхалки отойдешь, крестик нажми')
+        document.getElementById('logo-text').innerHTML = 'red:ebalo'
+        document.getElementById('logo-img').src = 'img/redebalo.jpg'
+        tg.expand();
+        shake();
+        document.body.style.setProperty('--tg-theme-button-color', 'red')
+        document.body.style.setProperty('--tg-theme-link-color', 'red')
+        tg.MainButton.text = 'Продать Мотороллу'
+        tg.MainButton.color = '#ff0000'
+        easterEggCounter = 0
+    }else{
+        shake();
+        setTimeout(() => {easterEggCounter = 0}, 2000)
+    }
 }
 
 function toast(text){
@@ -226,6 +246,7 @@ function collectData(){
     document.querySelector('#contractPrice').addEventListener('change', (event) => {
         document.querySelectorAll('#price, #currency').forEach(e => e.disabled = event.target.checked)
     })
+
 
     document.querySelectorAll('#typeService, #typeBuy, #typeSell').forEach(el => el.addEventListener('change', (event) => {
             const icon = document.querySelector('#categoryIcon')
