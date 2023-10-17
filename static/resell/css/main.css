@@ -218,6 +218,10 @@ a{
     text-align: left;
     border-radius: 1.2rem;
     min-height: 100px;
+    max-width: 100%;
+    place-self: start;
+    line-break: auto;
+    word-break: break-all;
     padding: .7rem;
     font-size: 12px;
     background-image: 
@@ -225,6 +229,10 @@ a{
         linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1));
     background-blend-mode: multiply;
     margin: auto;
+}
+
+.bubble > i{
+    max-width: 100%;
 }
 
 .btn-close{
